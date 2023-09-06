@@ -33,4 +33,13 @@ class PermissionController extends Controller
     }
 
 
+    public function permission_user()
+    {
+        $users = User::with('permissions')->find(1);
+
+        foreach ($users->permissions as $permission) {
+            echo "{$permission} <br>";
+        }
+    }
+
 }

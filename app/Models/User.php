@@ -38,7 +38,10 @@ class User extends Authenticatable
 
     //relacionamento de muitos para muitos
     public function permissions() 
-    {
-        return $this->belongsToMany(Permission::class);
+    {   
+        return $this->belongsToMany(Permission::class)
+            //recuperando valores da tabela remediada
+            ->withPivot(['active', 'created_at']); 
     }
+
 }
