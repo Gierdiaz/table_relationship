@@ -16,8 +16,11 @@ class Preference extends Model
 
         'notify_emails',
         'notify',
-        'content',
-        'title'
+        'description',
+        'title',
+        'address',
+        'number',
+        'difficult'
     ];
 
     public function user(): BelongsTo

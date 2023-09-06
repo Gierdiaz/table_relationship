@@ -5,7 +5,7 @@ use App\Http\Controllers\Academic\{
     LessonController,
     ModuleController
 };
-
+use App\Http\Controllers\PermissionController;
 use App\Http\Controllers\PreferenceController;
 use App\Models\Lesson;
 use Illuminate\Support\Facades\Route;
@@ -21,3 +21,4 @@ Route::get('users', [PreferenceController::class, 'index']);
 Route::resource('courses', CourseController::class);
 Route::resource('modules', ModuleController::class);
 Route::resource('lessons', LessonController::class);
+Route::resource('permissions', PermissionController::class);

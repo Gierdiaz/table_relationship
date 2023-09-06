@@ -35,4 +35,10 @@ class User extends Authenticatable
     {
         return $this->hasOne(Preference::class);
     }
+
+    //relacionamento de muitos para muitos
+    public function permissions() 
+    {
+        return $this->belongsToMany(Permission::class);
+    }
 }

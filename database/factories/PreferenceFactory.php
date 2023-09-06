@@ -21,8 +21,11 @@ class PreferenceFactory extends Factory
             'user_id' => User::all()->random()->id,
             'notify_emails' => fake()->boolean(),
             'notify' => fake()->boolean(),
-            'content' => fake()->paragraph(),
-            'title' => fake()->title()
+            'description' => fake()->paragraph(),
+            'title' => fake()->title(),
+            'difficult' => fake()->randomElement(['Easy','Medium','Hard']),
+            'address' => fake()->address(),
+            'number' => fake()->unique()->numberBetween(1,50),
         ];
     }
 }

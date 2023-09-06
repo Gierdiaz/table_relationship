@@ -16,10 +16,14 @@ return new class extends Migration
             $table->foreignId('user_id')->constrained('users')->onDelete('cascade');
             $table->boolean('notify_emails')->default(true);
             $table->boolean('notify')->default(true);
-            $table->text('content');
+            $table->text('description');
             $table->string('title');
+            $table->enum('difficult', ['Easy', 'Medium', 'Hard']);
+            $table->string('address');
+            $table->integer('number')->unsigned();
             $table->timestamps();
             $table->softDeletes();
+ 
         });
     }
 
